@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bankist, Welcome</title>
+    <script type="module" src="./src/scripts/mainPage/controller.js"></script>
+    <link rel="stylesheet" href="./src/scss/main.scss" />
+  </head>
+  <body>
+    <section class="section__interface">
+      <div class="container">
+        <div class="section__interface__left-panel">1</div>
+        <div class="section__interface__right-panel">
+          <div class="section__interface__right-panel__welcome-panel">
+            <h2 class="message">
+              Welcome back, <span class="username"></span>
+            </h2>
+            <span class="balance">Balance:</span>
+            <h3 class="balanceValue">$20,000</h3>
+          </div>
+          <div class="section__interface__right-panel__user-panel">
+            <p class="username">Ajdin</p>
+            <p class="cardNum">9315781395813590135531</p>
+            <p class="lastName">Omerovic</p>
+          </div>
+
+          <div class="section__interface__right-panel__send-panel">
+            <h2>Send Money</h2>
+            <form>
+              <div class="input-wrapper">
+                <input type="text" id="sendTo" placeholder="To:" />
+                <input type="number" id="sendAmount" placeholder="$" />
+              </div>
+              <button id="sendMoney">Send</button>
+            </form>
+          </div>
+
+          <div class="section__interface__right-panel__request-panel">
+            <h2>Request Loan</h2>
+            <form>
+              <input type="number" placeholder="$" />
+              <button id="requestLoan">Request</button>
+            </form>
+          </div>
+
+          <div class="section__interface__right-panel__limit-panel">
+            <h2>Transition Limit</h2>
+            <span class="limitValue">$12,000</span>
+            <h2>Request Limit</h2>
+            <span class="limitValue">$26,000</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

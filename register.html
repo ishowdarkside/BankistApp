@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/scss/main.scss" />
+    <script type="module" src="./src/scripts/register/controller.js"></script>
+  </head>
+  <body>
+    <section class="section__register">
+      <div class="container">
+        <div class="section__register__commercial">
+          <h2 class="section__register__commercial__heading mb-big">
+            We take care of your finances, so you can focus on life
+          </h2>
+          <p class="section__register__commercial__paragraph mb-big">
+            Our registration process is quick and easy,taking no more than 2
+            minutes to complete.
+          </p>
+          <div class="section__register__commercial__testimonial__wrapper">
+            <div
+              class="section__register__commercial__testimonial"
+              data-number="0"
+            >
+              <i
+                >"I never thought banking could be this easy. This app has
+                transformed the way I manage my finances. Thank you!"</i
+              >
+              <span id="creator">John D.</span>
+            </div>
+            <div
+              class="section__register__commercial__testimonial"
+              data-number="1"
+            >
+              <i
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+                laudantium voluptatem rerum iure inventore libero corporis
+              </i>
+              <span id="creator">John D.</span>
+            </div>
+            <div
+              class="section__register__commercial__testimonial"
+              data-number="2"
+            >
+              <i>
+                corrupti voluptatibus recusandae earum pariatur ea, ullam
+                assumenda ratione labore molestias nobis amet unde.</i
+              >
+              <span id="creator">John D.</span>
+            </div>
+            <div
+              class="section__register__commercial__testimonial__slider-pagination"
+            ></div>
+          </div>
+        </div>
+        <div class="section__register__reg_panel">
+          <h2 class="section__register__reg_panel__heading">
+            Lets Get Started!
+          </h2>
+          <p class="section__register__reg_panel__paragraph">Register Now!</p>
+
+          <form>
+            <div>
+              <input
+                type="text"
+                placeholder="First Name"
+                id="registerFirstName"
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                placeholder="Last Name"
+                id="registerLastName"
+              />
+            </div>
+            <div>
+              <input type="text" placeholder="Email" id="registerEmail" />
+            </div>
+            <div>
+              <input type="text" placeholder="Password" id="registerPassword" />
+            </div>
+
+            <button id="registerBtn">Register Now</button>
+            <p>Have an account? <a href="login.html">Login</a></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

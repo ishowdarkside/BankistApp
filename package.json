@@ -1,0 +1,20 @@
+{
+  "name": "bankist-mvc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel  index.html",
+    "start:mainPage": "parcel mainPage.html",
+    "start:loginPage": "parcel login.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "parcel": "^2.8.3"
+  },
+  "dependencies": {
+    "node-sass": "^8.0.0"
+  }
+}

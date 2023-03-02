@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bankist - Login</title>
+    <link rel="stylesheet" href="./src/scss/main.scss" />
+    <script type="module" src="./src/scripts/login/loginController.js"></script>
+  </head>
+  <body>
+    <section class="section__login">
+      <div class="container">
+        <h2 class="section__login__heading">Lets Get Started!</h2>
+        <p class="section__login__span">Login</p>
+
+        <form>
+          <input type="text" id="loginEmail" placeholder="Email" name="email" />
+          <input
+            type="text"
+            id="loginPassword"
+            placeholder="Password"
+            name="password"
+          />
+          <button id="loginBtn">Login</button>
+        </form>
+        <p class="section__login__reference">
+          Don’t have an account? <a href="register.html"> Register</a>
+        </p>
+      </div>
+    </section>
+  </body>
+</html>

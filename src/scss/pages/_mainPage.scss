@@ -1,0 +1,159 @@
+.section__interface {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    flex-grow: 1;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+  }
+
+  &__left-panel {
+    background-color: #ffff;
+    border-radius: 1rem 0 0 1rem;
+  }
+
+  &__right-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    background-color: #dce0e8;
+    border-radius: 0 1rem 1rem 0;
+
+    &__welcome-panel {
+      border-radius: 1rem;
+      grid-column: 1 / span 2;
+      padding: 2rem;
+      background-color: #ffff;
+
+      .message {
+        font-size: 3rem;
+        font-weight: 400;
+      }
+
+      .balance {
+        font-size: 1.6rem;
+      }
+
+      .balanceValue {
+        font-size: 3rem;
+        font-weight: 500;
+      }
+    }
+
+    &__user-panel {
+      text-align: end;
+      border-radius: 1rem;
+      padding: 2rem;
+      background-color: #ffff;
+
+      .username {
+        font-size: 3rem;
+        font-weight: 600;
+      }
+
+      .lastName {
+        font-size: 1.6rem;
+        font-style: italic;
+      }
+      .cardNum {
+        font-size: 1.6rem;
+      }
+    }
+
+    &__send-panel {
+      padding: 2rem;
+      background-color: #ffff;
+      border-radius: 1rem;
+      h2 {
+        font-size: 1.6rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        #sendMoney {
+          align-self: flex-start;
+        }
+
+        .input-wrapper {
+          display: flex;
+          gap: 10px;
+          #sendTo {
+            width: 100%;
+            border: none;
+            border-radius: 1rem;
+            padding: 0.5rem;
+            outline: none;
+            background-color: #f4f4f4;
+          }
+
+          #sendAmount {
+            width: 40%;
+            border: none;
+            border-radius: 1rem;
+            padding: 0.5rem;
+            outline: none;
+            background-color: #f4f4f4;
+          }
+        }
+
+        #sendMoney {
+          background-color: #ea5c5c;
+          padding: 1rem 2rem;
+          border: none;
+          cursor: pointer;
+          color: #ffff;
+          width: 40%;
+          outline: none;
+          border-radius: 1rem;
+        }
+      }
+    }
+
+    &__request-panel {
+      padding: 2rem;
+      background-color: #ffff;
+      border-radius: 1rem;
+
+      form {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        input {
+          width: 100%;
+          border: none;
+          border-radius: 1rem;
+          padding: 0.5rem;
+          outline: none;
+          background-color: #f4f4f4;
+        }
+
+        #requestLoan {
+          border: none;
+          outline: none;
+          padding: 1rem;
+          align-self: flex-start;
+          border-radius: 1rem;
+          background-color: $green-primary-lighter;
+          color: #ffff;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__limit-panel {
+      padding: 2rem;
+      background-color: #ffff;
+      border-radius: 1rem;
+    }
+  }
+}

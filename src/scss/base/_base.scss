@@ -1,0 +1,31 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: inherit;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+
+  @include responsive(tab-land) {
+    font-size: 56.25%;
+  }
+
+  @include responsive(tab-port) {
+    font-size: 50%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  height: 100vh;
+  background-image: linear-gradient(
+    to right bottom,
+    $green-primary-dark,
+    $green-primary-light
+  );
+}
