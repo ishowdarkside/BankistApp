@@ -3,10 +3,13 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+
+  @include responsive(tab-land) {
+    padding: 2rem;
+  }
   .container {
     border-radius: 1rem;
     flex-grow: 1;
-    background-color: purple;
     padding: 1.5rem;
     background-color: #ffff;
     display: grid;
@@ -15,9 +18,16 @@
     & > * {
       flex-grow: 1;
     }
+
+    @include responsive-custom(50em) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__commercial {
+    @include responsive-custom(50em) {
+      display: none !important;
+    }
     border-radius: 1rem;
     padding: 4rem 6rem 4rem 2rem;
     background-color: #f3f5f9;
