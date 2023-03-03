@@ -3,6 +3,16 @@ export const currUserId =
   document.cookie !== "" ? +document.cookie?.split("=")[1].slice(1, 2) : "";
 
 //Get user data function and return object
+
+//get current users data
+const returnUserData = async function (id) {
+  const currUserRes = await fetch(
+    `https://630fc2a936e6a2a04ee13188.mockapi.io/users/${id}`
+  );
+  const currUserData = await currUserRes.json();
+  return currUserData;
+};
+
 export const getUserData = async function (id) {
   try {
     const res = await fetch(
@@ -36,10 +46,8 @@ export const sendMoneyFunc = async function (sendingData) {
 const updateReceiverBalance = async function (id, value) {
   try {
     //getting receiver's balance to update it with value variable later on
-    const userRes = await fetch(
-      `https://630fc2a936e6a2a04ee13188.mockapi.io/users/${id}`
-    );
-    const userData = await userRes.json();
+
+    const userData = await getUserData(id);
     const currBalance = userData.balance;
     const currMovs = userData.movements;
     currMovs.push(value);
@@ -64,11 +72,7 @@ const updateReceiverBalance = async function (id, value) {
 };
 
 const updateSenderBalance = async function (value) {
-  //getting current Users balance to update it with value variable later on
-  const currUserRes = await fetch(
-    `https://630fc2a936e6a2a04ee13188.mockapi.io/users/${currUserId}`
-  );
-  const currUserData = await currUserRes.json();
+  const currUserData = await returnUserData(currUserId);
   const currBalance = currUserData.balance;
   const currMovs = currUserData.movements;
   currMovs.push(-value);
@@ -88,4 +92,31 @@ const updateSenderBalance = async function (value) {
       }),
     }
   );
+};
+
+export const requestMoneyFunc = async function (value) {
+  try {
+    const currUserData = await returnUserData(currUserId);
+    const currBalance = currUserData.balance;
+    const currMovs = currUserData.movements;
+    currMovs.push(value);
+
+    //update balance
+    const res = await fetch(
+      `https://630fc2a936e6a2a04ee13188.mockapi.io/users/${currUserId}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          balance: currBalance + value,
+          movements: currMovs,
+          trusted: true,
+        }),
+      }
+    );
+  } catch (err) {
+    console.log(err);
+  }
 };

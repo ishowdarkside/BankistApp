@@ -26,7 +26,7 @@ class LimitView {
       data.balance / 1.6
     ).toFixed(2, 0)}</span>
     <h2>Request Limit</h2>
-    <span class="limitValue"><span class="green-txt">$</span>${(
+    <span class="limitValue request-limit"><span class="green-txt">$</span>${(
       data.balance / 1.4
     ).toFixed(2, 0)}</span>
 
