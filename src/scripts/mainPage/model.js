@@ -2,8 +2,6 @@
 export const currUserId =
   document.cookie !== "" ? +document.cookie?.split("=")[1].slice(1, 2) : "";
 
-//Get user data function and return object
-
 //get current users data
 const returnUserData = async function (id) {
   const currUserRes = await fetch(
@@ -28,7 +26,7 @@ export const getUserData = async function (id) {
 //function for returning date
 const getFormatedDate = function () {
   const now = new Date();
-  const day = `${now.getDay()}`.padStart(2, 0);
+  const day = `${now.getDate()}`.padStart(2, 0);
   const month = `${now.getMonth()}`.padStart(2, 0);
   const year = now.getFullYear();
   const fullDate = `${day}.${month}.${year}`;

@@ -4,8 +4,6 @@ class TransView {
   );
 
   renderTransactions(data) {
-    console.log(data);
-
     const markup = data.movements
       .map((mov, i) => {
         return ` <div class="transaction__element">
@@ -24,19 +22,6 @@ class TransView {
       .join("");
 
     this.#parentElement.insertAdjacentHTML("afterbegin", markup);
-
-    /*
-    const markup = `${data.map((mov,i) => {
-      `   <div class="transaction__element">
-        <span class="transaction__element__date">${}</span>
-        <div class="transaction__element__type-wrapper">
-          <div class="status"></div>
-          <span class="transaction__element__type">Withdraw</span>
-        </div>
-        <span class="transaction__element__amount">$200</span>
-      </div>`;
-    })}`;
-    */
   }
 }
 
