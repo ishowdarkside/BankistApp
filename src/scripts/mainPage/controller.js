@@ -13,6 +13,8 @@ import limitView from "./limitView.js";
 import requestView from "./requestView.js";
 import transView from "./transView.js";
 import otherUsersView from "./otherUsersView.js";
+import closeAccView from "./closeAccView.js";
+import { closeCurrAcc } from "./model.js";
 
 let currUser;
 const checkForCookie = function () {
@@ -31,6 +33,7 @@ const init = async function () {
   transView.renderTransactions(currUser);
   otherUsersView.renderRandomUsers(getRecentUsers);
   otherUsersView.handleSearchUsers(getSearchUsers);
+  closeAccView.handleOverlay(closeCurrAcc);
 };
 
 init();

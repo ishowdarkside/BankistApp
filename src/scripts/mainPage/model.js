@@ -165,3 +165,27 @@ export const getSearchUsers = async function (searchData) {
     alert(err);
   }
 };
+
+export const closeCurrAcc = async function (dataObj) {
+  try {
+    const currData = await getUserData(currUserId);
+    if (
+      currData.email !== dataObj.closeEmail ||
+      currData.password !== dataObj.closePass
+    )
+      throw new Error("Invalid Email/Password");
+
+    const delRes = await fetch(
+      `https://630fc2a936e6a2a04ee13188.mockapi.io/users/${currUserId}`,
+      {
+        method: "DELETE",
+      }
+    );
+
+    const expirationDate = new Date(0);
+    document.cookie = `id="";expires="${expirationDate.toUTCString()}"`;
+    location.reload();
+  } catch (err) {
+    alert(err);
+  }
+};
