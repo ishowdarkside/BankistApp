@@ -78,6 +78,13 @@
       padding: 2rem;
       background-color: #ffff;
 
+      .status {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 100px;
+
+        background-color: #ea5c5c;
+      }
       .username {
         font-size: 3rem;
         font-weight: 600;

@@ -13,6 +13,12 @@ class userViewData {
 
     this.#parentElement.querySelector(".lastName").textContent =
       this.#data.lastName;
+
+    if (data.trusted) {
+      this.#parentElement.querySelector(
+        ".status"
+      ).style.backgroundColor = `#29e19f`;
+    }
   }
 }
 

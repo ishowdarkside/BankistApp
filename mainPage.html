@@ -46,8 +46,18 @@
             <h2>Send Money</h2>
             <form>
               <div class="input-wrapper">
-                <input type="text" id="sendTo" placeholder="To:" />
-                <input type="number" id="sendAmount" placeholder="$" />
+                <input
+                  type="text"
+                  id="sendTo"
+                  placeholder="To:"
+                  name="accepter"
+                />
+                <input
+                  type="number"
+                  id="sendAmount"
+                  placeholder="$"
+                  name="value"
+                />
               </div>
               <button id="sendMoney">Send</button>
             </form>
@@ -62,7 +72,7 @@
           </div>
 
           <div class="section__interface__right-panel__limit-panel">
-            <h2>Transition Limit</h2>
+            <h2>Transaction Limit</h2>
             <span class="limitValue"
               ><span class="green-txt">$</span>12,000</span
             >
