@@ -9,8 +9,12 @@ class RequestView {
       async function (e) {
         try {
           e.preventDefault();
+
           const requestValue =
             +this.#parentElement.querySelector("input").value;
+          if (data.balance === 0 && requestValue <= 5) {
+            return handler(requestValue);
+          }
 
           if (requestValue === 0) return;
           if (requestValue < 0)
@@ -18,7 +22,6 @@ class RequestView {
           if (requestValue > data.balance / 1.4)
             throw new Error("You have exceeded the allowed request limit");
           await handler(requestValue);
-          location.reload();
         } catch (err) {
           alert(err);
         }

@@ -5,6 +5,7 @@ import SendView from "./sendView.js";
 import { sendMoneyFunc } from "./model.js";
 import limitView from "./limitView.js";
 import requestView from "./requestView.js";
+import transView from "./transView.js";
 
 let currUser;
 const checkForCookie = function () {
@@ -20,6 +21,7 @@ const init = async function () {
   SendView.handleSend(currUser, sendMoneyFunc);
   limitView.renderLimits(currUser);
   requestView.handleRequest(currUser, requestMoneyFunc);
+  transView.renderTransactions(currUser);
 };
 
 init();

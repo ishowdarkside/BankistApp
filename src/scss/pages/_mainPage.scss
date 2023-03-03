@@ -264,6 +264,13 @@
         width: 1rem;
         height: 1rem;
         border-radius: 100px;
+      }
+
+      .positive {
+        background-color: $green-primary-lighter;
+      }
+
+      .negative {
         background-color: #ea5c5c;
       }
     }

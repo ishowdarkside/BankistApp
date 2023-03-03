@@ -25,6 +25,16 @@ export const getUserData = async function (id) {
   }
 };
 
+//function for returning date
+const getFormatedDate = function () {
+  const now = new Date();
+  const day = `${now.getDay()}`.padStart(2, 0);
+  const month = `${now.getMonth()}`.padStart(2, 0);
+  const year = now.getFullYear();
+  const fullDate = `${day}.${month}.${year}`;
+  return fullDate;
+};
+
 export const sendMoneyFunc = async function (sendingData) {
   try {
     const res = await fetch(
@@ -50,6 +60,8 @@ const updateReceiverBalance = async function (id, value) {
     const userData = await getUserData(id);
     const currBalance = userData.balance;
     const currMovs = userData.movements;
+    const currMovDates = userData.movDates;
+    currMovDates.push(getFormatedDate());
     currMovs.push(value);
 
     //changing receivers balance
@@ -63,6 +75,7 @@ const updateReceiverBalance = async function (id, value) {
         body: JSON.stringify({
           balance: currBalance + value,
           movements: currMovs,
+          movDates: currMovDates,
         }),
       }
     );
@@ -75,6 +88,8 @@ const updateSenderBalance = async function (value) {
   const currUserData = await returnUserData(currUserId);
   const currBalance = currUserData.balance;
   const currMovs = currUserData.movements;
+  const currMovDates = currUserData.movDates;
+  currMovDates.push(getFormatedDate());
   currMovs.push(-value);
 
   //Changing current Users balance by substracting sending  value with currentValue
@@ -89,6 +104,7 @@ const updateSenderBalance = async function (value) {
         balance: currBalance - value,
         movements: currMovs,
         trusted: true,
+        movDates: currMovDates,
       }),
     }
   );
@@ -99,6 +115,8 @@ export const requestMoneyFunc = async function (value) {
     const currUserData = await returnUserData(currUserId);
     const currBalance = currUserData.balance;
     const currMovs = currUserData.movements;
+    const currMovDates = currUserData.movDates;
+    currMovDates.push(getFormatedDate());
     currMovs.push(value);
 
     //update balance
@@ -113,9 +131,12 @@ export const requestMoneyFunc = async function (value) {
           balance: currBalance + value,
           movements: currMovs,
           trusted: true,
+          movDates: currMovDates,
         }),
       }
     );
+
+    location.reload();
   } catch (err) {
     console.log(err);
   }
