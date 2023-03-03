@@ -1,14 +1,22 @@
 .section__interface {
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
+  @include responsive-custom(70em) {
+    padding: 1rem;
+  }
 
   .container {
     flex-grow: 1;
     border-radius: 1rem;
     display: grid;
     grid-template-columns: 1fr 4fr;
+    height: 90vh;
+    overflow-y: scroll;
+    @include responsive-custom(50em) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__left-panel {
@@ -18,6 +26,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include responsive-custom(50em) {
+      flex-direction: column;
+    }
+    @include responsive-custom(50em) {
+      border-radius: 1rem 1rem 0 0;
+      flex-direction: row;
+    }
     h2 {
       font-size: 3rem;
       color: #313131;
@@ -45,6 +60,13 @@
         cursor: pointer;
       }
     }
+    #btnLogout {
+      span {
+        &:not(:last-child) {
+          color: #ea5c5c !important;
+        }
+      }
+    }
   }
 
   &__right-panel {
@@ -55,11 +77,22 @@
     background-color: #dce0e8;
     border-radius: 0 1rem 1rem 0;
 
+    @include responsive-custom(50em) {
+      border-radius: 0 0 1rem 1rem;
+    }
+
+    @include responsive-custom(46.87em) {
+      grid-template-columns: repeat(4, 1fr);
+    }
     &__welcome-panel {
       border-radius: 1rem;
       grid-column: 1 / span 2;
       padding: 2rem;
       background-color: #ffff;
+
+      @include responsive-custom(70em) {
+        grid-column: 1 / -1;
+      }
       .username {
         font-weight: 600;
       }
@@ -83,7 +116,15 @@
       border-radius: 1rem;
       padding: 2rem;
       background-color: #ffff;
+      @include responsive-custom(70em) {
+        grid-column: 1 / span 2;
+        grid-row: 3 / span 1;
+      }
 
+      @include responsive-custom(46.87em) {
+        grid-row: 2 / span 1;
+        grid-column: 3 / -1;
+      }
       .status {
         width: 1rem;
         height: 1rem;
@@ -109,6 +150,12 @@
       padding: 2rem;
       background-color: #ffff;
       border-radius: 1rem;
+      @include responsive-custom(46.87em) {
+        grid-column: 1 / span 2;
+      }
+      @include responsive-custom(34.37em) {
+        grid-column: 1 / -1;
+      }
       h2 {
         font-size: 1.6rem;
         font-weight: 500;
@@ -161,6 +208,13 @@
       padding: 2rem;
       background-color: #ffff;
       border-radius: 1rem;
+
+      @include responsive-custom(46.87em) {
+        grid-column: 3 / span 2;
+      }
+      @include responsive-custom(34.37em) {
+        grid-column: 1 / -1;
+      }
       h2 {
         font-size: 1.6rem;
         font-weight: 500;
@@ -198,6 +252,14 @@
       background-color: #ffff;
       border-radius: 1rem;
       position: relative;
+      @include responsive-custom(70em) {
+        grid-column: 1 / span 2;
+        grid-row: 2 / span 1;
+      }
+
+      @include responsive-custom(34.37em) {
+        grid-column: 1 / -1;
+      }
       h2 {
         font-weight: 400;
         font-size: 1.6rem;
@@ -238,6 +300,9 @@
       padding: 1rem;
       height: 40rem;
       overflow-y: scroll;
+      @include responsive-custom(46.87em) {
+        grid-column: 1 / -1;
+      }
       h2 {
         font-size: 1.6rem;
       }
@@ -252,6 +317,7 @@
         margin-top: 1rem;
       }
       .transaction__element {
+        position: relative;
         font-size: 1.6rem;
         display: flex;
         align-items: center;
@@ -260,7 +326,10 @@
         margin-bottom: 1.5rem;
 
         &__type-wrapper {
+          position: absolute;
           display: flex;
+          left: 50%;
+          transform: translateX(-50%);
           align-items: center;
           gap: 5px;
         }
@@ -292,6 +361,9 @@
       background-color: #ffff;
       padding: 2rem;
       border-radius: 1rem;
+      @include responsive-custom(46.87em) {
+        grid-column: 1 / -1;
+      }
       .input-wrapper {
         position: relative;
         input {

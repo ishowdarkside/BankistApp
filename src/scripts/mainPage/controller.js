@@ -15,6 +15,7 @@ import transView from "./transView.js";
 import otherUsersView from "./otherUsersView.js";
 import closeAccView from "./closeAccView.js";
 import { closeCurrAcc } from "./model.js";
+import logoutView from "./logoutView.js";
 
 let currUser;
 const checkForCookie = function () {
@@ -34,6 +35,7 @@ const init = async function () {
   otherUsersView.renderRandomUsers(getRecentUsers);
   otherUsersView.handleSearchUsers(getSearchUsers);
   closeAccView.handleOverlay(closeCurrAcc);
+  logoutView.handleLogout();
 };
 
 init();

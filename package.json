@@ -2,11 +2,11 @@
   "name": "bankist-mvc",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "parcel  index.html",
     "start:mainPage": "parcel mainPage.html",
-    "start:loginPage": "parcel login.html"
+    "start:loginPage": "parcel login.html",
+    "build": "parcel build *.html --dist-dir final"
   },
   "author": "",
   "license": "ISC",
