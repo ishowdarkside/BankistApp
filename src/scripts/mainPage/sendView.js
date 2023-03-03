@@ -13,7 +13,7 @@ class SendView {
         data.accepter =
           data.accepter[0].toUpperCase() + data.accepter.slice(1).toLowerCase();
         data.accepter = data.accepter.trim();
-        if (data.value > userData.balance / 1.6)
+        if (data.value > Math.ceil(userData.balance / 1.6))
           throw new Error("you have exceeded the allowed limit");
         if (data.value < 0)
           throw new Error("Amount should be positive Number!");

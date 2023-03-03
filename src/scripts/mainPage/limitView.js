@@ -23,12 +23,12 @@ class LimitView {
 
     const markup = `
     <h2>Transaction Limit</h2>
-    <span class="limitValue transaction-limit"><span class="green-txt">$</span>${(
-      data.balance / 1.6
-    ).toFixed(2, 0)}</span>
+    <span class="limitValue transaction-limit"><span class="green-txt">$</span>${Math.ceil(
+      (data.balance / 1.6).toFixed(2, 0)
+    )}</span>
     <h2>Request Limit</h2>
     <span class="limitValue request-limit"><span class="green-txt">$</span>${
-      data.balance > 0 ? (data.balance / 1.4).toFixed(2, 0) : "5.00"
+      data.balance > 0 ? Math.ceil((data.balance / 1.4).toFixed(2, 0)) : "5.00"
     }</span>
 
     <div class="dateWrap">

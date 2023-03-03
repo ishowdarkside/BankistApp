@@ -139,3 +139,29 @@ export const requestMoneyFunc = async function (value) {
     console.log(err);
   }
 };
+
+export const getRecentUsers = async function () {
+  const currUserData = await getUserData(currUserId);
+  const res = await fetch("https://630fc2a936e6a2a04ee13188.mockapi.io/users");
+  const data = await res.json();
+  return data
+    .filter((user) => user.firstName !== currUserData.firstName)
+    .splice(0, 3);
+};
+
+export const getSearchUsers = async function (searchData) {
+  try {
+    const currUserData = await getUserData(currUserId);
+    const res = await fetch(
+      "https://630fc2a936e6a2a04ee13188.mockapi.io/users"
+    );
+    const data = await res.json();
+    if (searchData === currUserData.firstName)
+      throw new Error("You can't search yourself!");
+    const targetUser = data.find((user) => user.firstName === searchData);
+    if (!targetUser) throw new Error("User not found");
+    return targetUser;
+  } catch (err) {
+    alert(err);
+  }
+};

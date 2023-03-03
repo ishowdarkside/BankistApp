@@ -312,7 +312,9 @@
 
       .recentUsers__wrapper {
         margin-top: 1rem;
-
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
         .recentUser__element {
           background-color: purple;
           padding: 1rem;
