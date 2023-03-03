@@ -11,19 +11,35 @@
   <body>
     <section class="section__interface">
       <div class="container">
-        <div class="section__interface__left-panel">1</div>
+        <div class="section__interface__left-panel">
+          <h2><span class="green-txt">B</span>ankist</h2>
+          <ul>
+            <li id="btnDiscussions">
+              <img src="./src/imgs/chat.svg" alt="" />
+              <a href="#">Discussions</a>
+            </li>
+            <li id="btnDiscussions">
+              <img src="./src/imgs/close.svg" alt="" />
+              <a href="#">Close Account</a>
+            </li>
+          </ul>
+        </div>
         <div class="section__interface__right-panel">
           <div class="section__interface__right-panel__welcome-panel">
             <h2 class="message">
               Welcome back, <span class="username"></span>
             </h2>
             <span class="balance">Balance:</span>
-            <h3 class="balanceValue"><span class="green-txt">$</span>20,000</h3>
+            <h3 class="balanceValue"></h3>
           </div>
           <div class="section__interface__right-panel__user-panel">
-            <p class="username">Ajdin</p>
-            <p class="cardNum">9315781395813590135531</p>
-            <p class="lastName">Omerovic</p>
+            <div class="status-wrap">
+              <div class="status"></div>
+              <p class="username"></p>
+            </div>
+
+            <p class="cardNum"></p>
+            <p class="lastName"></p>
           </div>
 
           <div class="section__interface__right-panel__send-panel">
@@ -193,7 +209,7 @@
             <form>
               <div class="input-wrapper">
                 <img src="./src/imgs/search.svg" alt="search input icon" />
-                <input type="text" id="searchUsers" />
+                <input type="text" id="searchUsers" placeholder=" " />
               </div>
             </form>
             <p>Recent Users:</p>

@@ -23,6 +23,9 @@ export const registerUser = async function (
       email: email,
       password: password,
       cardNum: Date.now(),
+      balance: 0,
+      trusted: false,
+      movements: [],
     }),
   });
 
